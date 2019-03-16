@@ -2,8 +2,6 @@ package com.lasalle.automation.vueling.web;
 
 import com.lasalle.automation.vueling.web.domain.FlightDate;
 
-import java.util.Map;
-
 public class FlightQuery {
     private String origin;
     private String destination;
