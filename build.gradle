@@ -18,14 +18,17 @@ repositories {
 }
 
 dependencies {
-    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+    // Logger
+    compile group: 'ch.qos.logback', name: 'logback-core', version: logbackVersion
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: logbackVersion
 
-    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
-    testCompile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    // BDD: Cucumber - Serenity
+    compile("net.serenity-bdd:serenity-core:${serenityVersion}")
+    compile("net.serenity-bdd:serenity-rest-assured:${serenityVersion}")
+    compile("net.serenity-bdd:serenity-cucumber:${serenityCucumberVersion}")
 
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-    testCompile group: 'org.assertj', name: 'assertj-core', version: '3.11.1'
-
-    testCompile 'info.cukes:cucumber-java:1.1.8',
-            'info.cukes:cucumber-junit:1.1.8'
+    // Assertions
+    testCompile group: 'junit', name: 'junit', version: junitVersion
+    testCompile group: 'org.assertj', name: 'assertj-core', version: assertjVersion
+    testCompile group: 'org.hamcrest', name: 'hamcrest-core', version: hamcrestVersion
 }
